@@ -15,7 +15,7 @@ import java.util.List;
 * @createDate: 2020/1/23 17:00
 * @version: 1.0
 */
-@FeignClient(name = "tulingmall-coupons",path = "/coupon")
+@FeignClient(name = "faichuismall-coupons",path = "/coupon")
 public interface UmsCouponFeignApi {
 
     @RequestMapping(value = "/listCart", method = RequestMethod.POST)

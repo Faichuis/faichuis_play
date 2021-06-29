@@ -16,7 +16,7 @@ import java.util.List;
 * @createDate: 2020/1/23 15:01
 * @version: 1.0
 */
-@FeignClient(name = "tulingmall-member",path = "/member")
+@FeignClient(name = "faichuismall-member",path = "/member")
 public interface UmsMemberFeignApi {
 
     @RequestMapping(value = "/address/{id}", method = RequestMethod.GET)

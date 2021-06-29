@@ -9,7 +9,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.faichuis</groupId>
     <artifactId>faichuis-portal</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -121,7 +120,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.tuling</groupId>
+            <groupId>com.faichuis</groupId>
             <artifactId>faichuis-common</artifactId>
         </dependency>
         <dependency>

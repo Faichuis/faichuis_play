@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 * @createDate: 2020/1/14 21:44
 * @version: 1.0
 */
-@FeignClient(name = "tulingmall-member",configuration = UmsMemberFeignConfig.class)
+@FeignClient(name = "faichuismall-member",configuration = UmsMemberFeignConfig.class)
 public interface UmsMemberClientApi {
 
     @RequestMapping(value = "/getCurrentMember", method = RequestMethod.GET)

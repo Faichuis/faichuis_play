@@ -17,7 +17,7 @@ import java.util.List;
 * @createDate: 2020/1/23 17:42
 * @version: 1.0
 */
-@FeignClient(name = "tulingmall-product")
+@FeignClient(name = "faichuismall-product")
 public interface PmsProductFeignApi {
 
     @RequestMapping(value = "/pms/cartProduct/{productId}", method = RequestMethod.GET)

@@ -18,6 +18,8 @@
 *.nar
 *.ear
 *.zip
+*.idea
+*.iml
 *.tar.gz
 *.rar
 

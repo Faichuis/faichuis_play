@@ -7,7 +7,6 @@
 		<artifactId>faichuis-mall</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.faichuis</groupId>
 	<artifactId>faichuis-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>faichuis-api</name>

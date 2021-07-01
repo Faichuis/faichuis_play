@@ -1,15 +1,15 @@
 spring:
   application:
-    name: tulingmall-authcenter
+    name: faichuis-authcenter
   profiles:
     active: dev
   cloud:
     nacos:
       config:
-        server-addr: 192.168.38.100:8848
-        file-extension: yml
-        shared-dataids: tulingmall-db-common.yml,tulingmall-nacos.yml
-        refreshable-dataids: tulingmall-db-common.yml,tulingmall-nacos.yml
+        server-addr: localhost:8848 #配置中心的地址
+        file-extension: yml #配置文件结尾的配置
+        shared-dataids: faichuis-nacos.yml,faichuis-db-common.yml #公共配置
+        refreshable-dataids: faichuis-nacos.yml,faichuis-db-common.yml
 logging:
   level:
     com:

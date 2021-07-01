@@ -42,7 +42,7 @@ public class JwtUtils {
     /**
      * 认证服务器暴露的获取token_key的地址
      */
-    private static final String AUTH_TOKEN_KEY_URL = "http://tulingmall-authcenter/oauth/token_key";
+    private static final String AUTH_TOKEN_KEY_URL = "http://faichuis-authcenter/oauth/token_key";
 
     /**
      * 请求头中的 token的开始

@@ -5,7 +5,6 @@ import com.faichuis.faichuismall.mapper.UmsMemberMapper;
 import com.faichuis.faichuismall.model.UmsMember;
 import com.faichuis.faichuismall.model.UmsMemberExample;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -35,7 +35,7 @@ public class TulingUserDetailService implements UserDetailsService {
      * @date:2020/1/21 21:30
      */
 
-    @Autowired
+    @Resource
     private UmsMemberMapper memberMapper;
 
     @Override

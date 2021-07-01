@@ -11,6 +11,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 //@MapperScan({"com.macro.mall.mapper","com.macro.mall.dao"})
-@MapperScan({"com.tuling.tulingmall.mapper","com.tuling.tulingmall.dao"})
+@MapperScan({"com.faichuis.faichuismall.mapper","com.faichuis.faichuismall.dao"})
 public class MyBatisConfig {
 }

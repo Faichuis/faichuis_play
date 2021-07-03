@@ -16,7 +16,7 @@ import java.util.LinkedHashSet;
 * @version: 1.0
 */
 @Data
-@ConfigurationProperties("tuling.gateway")
+@ConfigurationProperties("faichuis.gateway")
 public class NotAuthUrlProperties {
 
     private LinkedHashSet<String> shouldSkipUrls;

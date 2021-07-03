@@ -2,6 +2,7 @@ package com.faichuis.faichuismall.service;
 
 import com.faichuis.faichuismall.domain.MemberDetails;
 import com.faichuis.faichuismall.mapper.UmsMemberMapper;
+import com.faichuis.faichuismall.mapper.UmsMemberMemberTagRelationMapper;
 import com.faichuis.faichuismall.model.UmsMember;
 import com.faichuis.faichuismall.model.UmsMemberExample;
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +38,8 @@ public class TulingUserDetailService implements UserDetailsService {
 
     @Resource
     private UmsMemberMapper memberMapper;
+    @Resource
+    private UmsMemberMemberTagRelationMapper memberMemberTagRelationMapper;
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {

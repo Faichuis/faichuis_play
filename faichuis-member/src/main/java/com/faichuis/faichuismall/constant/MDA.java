@@ -22,7 +22,7 @@ public class MDA {
     /**
      * 认证服务器登陆地址
      */
-    public static final String OAUTH_LOGIN_URL = "http://tulingmall-authcenter/oauth/token";
+    public static final String OAUTH_LOGIN_URL = "http://faichuis-authcenter/oauth/token";
 
 
     public static final String USER_NAME = "username";

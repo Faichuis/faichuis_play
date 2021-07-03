@@ -22,6 +22,7 @@ import org.springframework.util.PathMatcher;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import javax.annotation.Resource;
 import java.security.PublicKey;
 import java.util.Map;
 
@@ -40,7 +41,7 @@ public class AuthorizationFilter implements GlobalFilter,Ordered,InitializingBea
     /**
      * 请求各个微服务 不需要用户认证的URL
      */
-    @Autowired
+    @Resource
     private NotAuthUrlProperties notAuthUrlProperties;
 
     /**

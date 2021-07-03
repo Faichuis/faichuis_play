@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: faichuis-authcenter
   profiles:
     active: dev
   cloud:
@@ -10,10 +8,12 @@ spring:
         file-extension: yml #配置文件结尾的配置
         shared-dataids: faichuis-nacos.yml,faichuis-db-common.yml #公共配置
         refreshable-dataids: faichuis-nacos.yml,faichuis-db-common.yml
-logging:
-  level:
-    com:
-     alibaba:
-      cloud:
-        nacos:
-          client: warn
+  application:
+    name: faichuis-authcenter
+#logging:
+#  level:
+#    com:
+#     alibaba:
+#      cloud:
+#        nacos:
+#          client: warn

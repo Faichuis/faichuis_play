@@ -1,4 +1,4 @@
-package com.faichuis.faichuismall.Component;
+package com.faichuis.faichuismall.component;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.ServiceInstance;
@@ -21,11 +21,11 @@ import java.util.Random;
  * Created by smlz on 2019/11/19.
  */
 @Slf4j
-public class TulingRestTemplate extends RestTemplate {
+public class FaichuisRestTemplate extends RestTemplate {
 
     private DiscoveryClient discoveryClient;
 
-    public TulingRestTemplate(DiscoveryClient discoveryClient) {
+    public FaichuisRestTemplate(DiscoveryClient discoveryClient) {
         this.discoveryClient = discoveryClient;
     }
 

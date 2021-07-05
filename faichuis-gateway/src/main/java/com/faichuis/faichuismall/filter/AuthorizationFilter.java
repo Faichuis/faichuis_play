@@ -2,7 +2,7 @@ package com.faichuis.faichuismall.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.faichuis.faichuismall.utils.JwtUtils;
-import com.faichuis.faichuismall.Component.TulingRestTemplate;
+import com.faichuis.faichuismall.component.FaichuisRestTemplate;
 import com.faichuis.faichuismall.common.api.ResultCode;
 import com.faichuis.faichuismall.common.exception.GateWayException;
 import com.faichuis.faichuismall.properties.NotAuthUrlProperties;
@@ -36,7 +36,7 @@ import java.util.Map;
 public class AuthorizationFilter implements GlobalFilter,Ordered,InitializingBean {
 
     @Autowired
-    private TulingRestTemplate restTemplate;
+    private FaichuisRestTemplate restTemplate;
 
     /**
      * 请求各个微服务 不需要用户认证的URL
@@ -111,6 +111,7 @@ public class AuthorizationFilter implements GlobalFilter,Ordered,InitializingBea
         //将现在的request 变成 change对象
         return serverWebExchange.mutate().request(request).build();
     }
+
 
 
 /*    private boolean hasPremisson(Claims claims,String currentUrl) {

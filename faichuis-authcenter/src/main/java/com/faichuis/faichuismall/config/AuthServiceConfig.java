@@ -3,8 +3,7 @@ package com.faichuis.faichuismall.config;
 
 import com.faichuis.faichuismall.component.FaichuisTokenEnhancer;
 import com.faichuis.faichuismall.properties.JwtCAProperties;
-import com.faichuis.faichuismall.service.TulingUserDetailService;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import com.faichuis.faichuismall.service.UserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
@@ -35,7 +34,7 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
     @Resource
     private JwtCAProperties jwtCAProperties;
     @Resource
-    private TulingUserDetailService tulingUserDetailService;
+    private UserDetailService userDetailService;
     @Resource
     private AuthenticationManager authenticationManager;
 
@@ -44,10 +43,20 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
         clients.withClientDetails(faichuisClientDetailsService());
     }
 
+
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(faichuisTokenEnhancer(),jwtAccessTokenConverter()));
+        endpoints.tokenStore(tokenStore())
+                .tokenEnhancer(tokenEnhancerChain)
+                .userDetailsService(userDetailService)
+                .authenticationManager(authenticationManager);
+    }
+
+
     @Bean
     public ClientDetailsService faichuisClientDetailsService(){
-
-
         return  new JdbcClientDetailsService(dataSource);
     }
 
@@ -74,15 +83,5 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
     @Bean
     public FaichuisTokenEnhancer faichuisTokenEnhancer(){
         return  new FaichuisTokenEnhancer();
-    }
-
-    @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(faichuisTokenEnhancer(),jwtAccessTokenConverter()));
-        endpoints.tokenStore(tokenStore())
-                .tokenEnhancer(tokenEnhancerChain)
-                .userDetailsService(tulingUserDetailService)
-                .authenticationManager(authenticationManager);
     }
 }

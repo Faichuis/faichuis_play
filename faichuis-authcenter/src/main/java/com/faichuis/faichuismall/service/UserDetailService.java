@@ -25,7 +25,7 @@ import java.util.List;
 */
 @Slf4j
 @Component
-public class TulingUserDetailService implements UserDetailsService {
+public class UserDetailService implements UserDetailsService {
 
     /**
      * 方法实现说明:用户登陆

@@ -10,32 +10,45 @@ import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Slf4j
 @Component
+@EnableConfigurationProperties
 public class OrderMessageSender {
 
-    @Value("${rocketmq.tulingmall.scheduleTopic}")
+//    @Value("${scheduleTopic}")
     private String scheduleTopic;
 
-    @Value("${rocketmq.tulingmall.transGroup}")
+//    @Value("${rocketmq.faichuismaill.transGroup}")
     private String transGroup;
 
-    @Value("${rocketmq.tulingmall.transTopic}")
+//    @Value("${rocketmq.faichuismaill.transTopic}")
     private String transTopic;
 
-    @Value("${rocketmq.tulingmall.asyncOrderTopic}")
+//    @Value("${rocketmq.faichuismaill.asyncOrderTopic}")
     private String asyncOrderTopic;
 
     private String TAG = "cancelOrder";
     private String TXTAG = "trans";
     private String ORDERTAG = "create-order";
 
-    @Autowired
+//    @Autowired
     private RocketMQTemplate rocketMQTemplate;
+
+    @PostConstruct
+    public  void init(){
+
+        System.out.println(123);
+    }
 
     /**
      * 发送延时订单
@@ -50,6 +63,7 @@ public class OrderMessageSender {
         SendResult result = rocketMQTemplate.syncSend(scheduleTopic+":"+TAG,message,5000,15);
         return SendStatus.SEND_OK == result.getSendStatus();
     }
+
 
     /**
      * 事务消息,弱关联分布式系统柔性事务解决方案

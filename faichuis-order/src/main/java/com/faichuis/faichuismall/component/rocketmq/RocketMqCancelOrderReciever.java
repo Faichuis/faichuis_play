@@ -14,7 +14,7 @@ import org.springframework.util.StringUtils;
  * @author yangguo
  */
 @Slf4j
-@Component
+//@Component
 @RocketMQMessageListener(consumerGroup = "${rocketmq.tulingmall.cancelGroup}", topic = "${rocketmq.tulingmall.scheduleTopic}")
 public class RocketMqCancelOrderReciever implements RocketMQListener<String> {
 

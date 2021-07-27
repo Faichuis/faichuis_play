@@ -1,7 +1,7 @@
 package com.faichuis.faichuismall.spi;
 
 import com.faichuis.faichuismall.util.RedisOpsUtil;
-import com.faichuis.faichuismall.TulingmallOrderApplication;
+import com.faichuis.faichuismall.FaichuisOrderApplication;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.shardingsphere.spi.keygen.ShardingKeyGenerator;
@@ -47,7 +47,7 @@ public class OrderByRedisKeyGenerator implements ShardingKeyGenerator {
     @Override
     public Comparable<?> generateKey() {
         StringBuilder sb = new StringBuilder();
-        RedisOpsUtil redisOpsUtil = TulingmallOrderApplication.getBean("redisOpsUtil");
+        RedisOpsUtil redisOpsUtil = FaichuisOrderApplication.getBean("redisOpsUtil");
 
         String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
         String key = properties.getProperty("redis.prefix") + date;

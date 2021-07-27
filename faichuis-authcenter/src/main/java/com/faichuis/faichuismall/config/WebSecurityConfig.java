@@ -1,6 +1,6 @@
 package com.faichuis.faichuismall.config;
 
-import com.faichuis.faichuismall.service.TulingUserDetailService;
+import com.faichuis.faichuismall.service.UserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    private TulingUserDetailService tulingUserDetailService;
+    private UserDetailService tulingUserDetailService;
 
 
     @Override

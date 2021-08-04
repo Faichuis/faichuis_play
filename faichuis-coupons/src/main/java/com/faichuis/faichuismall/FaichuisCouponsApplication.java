@@ -2,12 +2,14 @@ package com.faichuis.faichuismall;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-public class TulingmallCanalApplication {
+@EnableFeignClients
+public class FaichuisCouponsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TulingmallCanalApplication.class, args);
+		SpringApplication.run(FaichuisCouponsApplication.class, args);
 	}
 
 }

@@ -31,8 +31,8 @@ import java.util.concurrent.TimeUnit;
  * @description: 消费监听rocketmq-订单超时消息
  **/
 @Slf4j
-//@Component
-@RocketMQMessageListener(topic = "${rocketmq.tulingmall.asyncOrderTopic}",consumerGroup = "${rocketmq.tulingmall.asyncOrderGroup}")
+@Component
+@RocketMQMessageListener(topic = "${rocketmq.faichuismaill.asyncOrderTopic}",consumerGroup = "${rocketmq.faichuismaill.asyncOrderGroup}")
 public class AscynCreateOrderReciever implements RocketMQListener<OrderMessage> {
 
     @Autowired

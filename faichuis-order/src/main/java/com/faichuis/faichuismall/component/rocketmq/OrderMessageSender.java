@@ -25,23 +25,23 @@ import javax.annotation.PostConstruct;
 @EnableConfigurationProperties
 public class OrderMessageSender {
 
-//    @Value("${scheduleTopic}")
+    @Value("${scheduleTopic}")
     private String scheduleTopic;
 
-//    @Value("${rocketmq.faichuismaill.transGroup}")
+    @Value("${rocketmq.faichuismaill.transGroup}")
     private String transGroup;
 
-//    @Value("${rocketmq.faichuismaill.transTopic}")
+    @Value("${rocketmq.faichuismaill.transTopic}")
     private String transTopic;
 
-//    @Value("${rocketmq.faichuismaill.asyncOrderTopic}")
+    @Value("${rocketmq.faichuismaill.asyncOrderTopic}")
     private String asyncOrderTopic;
 
     private String TAG = "cancelOrder";
     private String TXTAG = "trans";
     private String ORDERTAG = "create-order";
 
-//    @Autowired
+    @Autowired
     private RocketMQTemplate rocketMQTemplate;
 
     @PostConstruct

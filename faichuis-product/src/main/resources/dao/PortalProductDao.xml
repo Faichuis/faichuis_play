@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.faichuis.faichuismall.dao.PortalProductDao">
-    <resultMap id="cartProductMap" type="CartProduct" autoMapping="true">
+    <resultMap id="cartProductMap" type="com.faichuis.faichuismall.domain.CartProduct" autoMapping="true">
         <id column="id" jdbcType="BIGINT" property="id" />
         <collection property="productAttributeList" columnPrefix="attr_" resultMap="com.faichuis.faichuismall.mapper.PmsProductAttributeMapper.BaseResultMap">
         </collection>
         <collection property="skuStockList" columnPrefix="sku_" resultMap="com.faichuis.faichuismall.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
     </resultMap>
-    <resultMap id="promotionProductMap" type="PromotionProduct" extends="com.faichuis.faichuismall.mapper.PmsProductMapper.BaseResultMap">
+    <resultMap id="promotionProductMap" type="com.faichuis.faichuismall.domain.PromotionProduct" extends="com.faichuis.faichuismall.mapper.PmsProductMapper.BaseResultMap">
         <id column="id" jdbcType="BIGINT" property="id" />
         <collection property="skuStockList" columnPrefix="sku_" resultMap="com.faichuis.faichuismall.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
@@ -17,7 +17,7 @@
         <collection property="productFullReductionList" columnPrefix="full_" resultMap="com.faichuis.faichuismall.mapper.PmsProductFullReductionMapper.BaseResultMap">
         </collection>
     </resultMap>
-    <resultMap id="productInfoMap" type="PmsProductParam" extends="com.faichuis.faichuismall.mapper.PmsProductMapper.ResultMapWithBLOBs">
+    <resultMap id="productInfoMap" type="com.faichuis.faichuismall.domain.PmsProductParam" extends="com.faichuis.faichuismall.mapper.PmsProductMapper.ResultMapWithBLOBs">
         <id column="id" jdbcType="BIGINT" property="id" />
         <collection property="productLadderList" columnPrefix="ladder_" resultMap="com.faichuis.faichuismall.mapper.PmsProductLadderMapper.BaseResultMap">
         </collection>

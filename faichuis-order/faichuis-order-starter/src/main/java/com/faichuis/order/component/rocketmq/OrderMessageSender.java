@@ -10,7 +10,10 @@ import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
@@ -22,16 +25,16 @@ import javax.annotation.PostConstruct;
 @EnableConfigurationProperties
 public class OrderMessageSender {
 
-//    @Value("${scheduleTopic}")
+    @Value("${rocketmq.faichuismaill.scheduleTopic}")
     private String scheduleTopic;
 
-//    @Value("${rocketmq.faichuismaill.transGroup}")
+    @Value("${rocketmq.faichuismaill.transGroup}")
     private String transGroup;
 
-//    @Value("${rocketmq.faichuismaill.transTopic}")
+    @Value("${rocketmq.faichuismaill.transTopic}")
     private String transTopic;
 
-//    @Value("${rocketmq.faichuismaill.asyncOrderTopic}")
+    @Value("${rocketmq.faichuismaill.asyncOrderTopic}")
     private String asyncOrderTopic;
 
     private String TAG = "cancelOrder";

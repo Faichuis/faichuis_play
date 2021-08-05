@@ -11,7 +11,6 @@ import com.faichuis.faichuismall.model.SmsFlashPromotionSession;
 import com.faichuis.faichuismall.model.SmsFlashPromotionSessionExample;
 import com.faichuis.faichuismall.util.DateUtil;
 import com.faichuis.faichuismall.util.RedisOpsUtil;
-import com.github.pagehelper.PageHelper;
 import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
 import com.faichuis.faichuismall.component.LocalCache;
 import com.faichuis.faichuismall.component.zklock.ZKLock;
@@ -140,7 +139,6 @@ public class PmsProductServiceImpl implements PmsProductService {
      * @param sessionId 场次活动ID，for example：13:00-14:00场等
      */
     public List<FlashPromotionProduct> getFlashProductList(Integer pageSize, Integer pageNum, Long flashPromotionId, Long sessionId){
-        PageHelper.startPage(pageNum,pageSize,"sort desc");
         return flashPromotionProductDao.getFlashProductList(flashPromotionId,sessionId);
     }
 
@@ -202,7 +200,6 @@ public class PmsProductServiceImpl implements PmsProductService {
      * @return
      */
     public List<FlashPromotionProduct> getHomeSecKillProductList(){
-        PageHelper.startPage(1,8,"sort desc");
         FlashPromotionParam flashPromotionParam = flashPromotionProductDao.getFlashPromotion(null);
         if(flashPromotionParam==null || CollectionUtils.isEmpty(flashPromotionParam.getRelation())){
             return null;
@@ -211,7 +208,6 @@ public class PmsProductServiceImpl implements PmsProductService {
         flashPromotionParam.getRelation().stream().forEach(item->{
             promotionIds.add(item.getId());
         });
-        PageHelper.clearPage();
         return flashPromotionProductDao.getHomePromotionProductList(promotionIds);
     }
 

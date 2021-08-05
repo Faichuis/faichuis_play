@@ -1,6 +1,5 @@
 package com.faichuis.faichuismall.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class PmsProductCategoryAttributeRelation implements Serializable {

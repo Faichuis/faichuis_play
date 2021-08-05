@@ -1,10 +1,7 @@
 package com.faichuis.faichuismall.config;
 
 import feign.Logger;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 /**
 * @vlog: 高于生活，源于生活

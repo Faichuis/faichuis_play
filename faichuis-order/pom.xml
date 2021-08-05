@@ -2,7 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>faichuis-order-client</module>
+		<module>faichuis-order-starter</module>
+		<module>faichuis-order-service</module>
+		<module>faichuis-order-domain</module>
+		<module>faichuis-order-dao</module>
+        <module>faichuis-order-feign</module>
+    </modules>
+
+    <parent>
 		<groupId>com.faichuis</groupId>
 		<artifactId>faichuis-mall</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
@@ -21,6 +32,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
 		</dependency>
 
 
@@ -58,24 +82,24 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
-		<!-- sharding 分库分表-->
-		<dependency>
-			<groupId>org.apache.shardingsphere</groupId>
-			<artifactId>sharding-jdbc-spring-boot-starter</artifactId>
-			<version>4.0.1</version>
-		</dependency>
-		<!-- transaction 2pc XA 2阶段提交分布式事务 -->
-		<dependency>
-			<groupId>org.apache.shardingsphere</groupId>
-			<artifactId>sharding-transaction-xa-core</artifactId>
-			<version>4.0.1</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>slf4j-api</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+<!--		&lt;!&ndash; sharding 分库分表&ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.apache.shardingsphere</groupId>-->
+<!--			<artifactId>sharding-jdbc-spring-boot-starter</artifactId>-->
+<!--			<version>4.0.1</version>-->
+<!--		</dependency>-->
+<!--		&lt;!&ndash; transaction 2pc XA 2阶段提交分布式事务 &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.apache.shardingsphere</groupId>-->
+<!--			<artifactId>sharding-transaction-xa-core</artifactId>-->
+<!--			<version>4.0.1</version>-->
+<!--			<exclusions>-->
+<!--				<exclusion>-->
+<!--					<artifactId>slf4j-api</artifactId>-->
+<!--					<groupId>org.slf4j</groupId>-->
+<!--				</exclusion>-->
+<!--			</exclusions>-->
+<!--		</dependency>-->
 
 		<!-- Base - 基于华为servicecomb的saga柔性事务,shardingjdbc正式版之后没有进行维护,需要自己重构saga工程 -->
 		<!--<dependency>
@@ -111,8 +135,7 @@
 
 		<dependency>
 			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>1.1.4</version>
+			<artifactId>druid-spring-boot-starter</artifactId>
 		</dependency>
 
 		<!-- 支付宝支付 -->

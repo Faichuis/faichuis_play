@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * 订单超时取消并解锁库存的定时器
  */
 @Slf4j
-@Component
+//@Component
 public class OrderTimeOutCancelTask {
 
     /*@Autowired

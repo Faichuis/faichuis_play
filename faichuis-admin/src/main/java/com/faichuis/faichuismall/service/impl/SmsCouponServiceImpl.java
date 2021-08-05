@@ -11,7 +11,6 @@ import com.faichuis.faichuismall.mapper.UmsMemberMemberTagRelationMapper;
 import com.faichuis.faichuismall.model.*;
 import com.faichuis.faichuismall.service.SmsCouponService;
 import com.github.pagehelper.PageHelper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 

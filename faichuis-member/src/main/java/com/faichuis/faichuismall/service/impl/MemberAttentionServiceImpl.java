@@ -1,8 +1,8 @@
 package com.faichuis.faichuismall.service.impl;
 
+import com.faichuis.faichuismall.repository.MemberBrandAttentionRepository;
 import com.faichuis.faichuismall.domain.MemberBrandAttention;
 import com.faichuis.faichuismall.service.MemberAttentionService;
-import com.faichuis.faichuismall.repository.MemberBrandAttentionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,5 +1,7 @@
 package com.faichuis.faichuismall.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.faichuis.faichuismall.entity.UmsMemberDO;
 import com.faichuis.faichuismall.model.UmsMember;
 import com.faichuis.faichuismall.model.UmsMemberExample;
 
@@ -7,7 +9,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-public interface UmsMemberMapper {
+public interface UmsMemberMapper extends BaseMapper<UmsMemberDO> {
     long countByExample(UmsMemberExample example);
 
     int deleteByExample(UmsMemberExample example);

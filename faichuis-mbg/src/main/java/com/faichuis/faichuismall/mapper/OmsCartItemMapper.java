@@ -1,5 +1,7 @@
 package com.faichuis.faichuismall.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.faichuis.faichuismall.entity.OmsCartItemDO;
 import com.faichuis.faichuismall.model.OmsCartItem;
 import com.faichuis.faichuismall.model.OmsCartItemExample;
 
@@ -7,7 +9,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-public interface OmsCartItemMapper {
+public interface OmsCartItemMapper extends BaseMapper<OmsCartItemDO> {
     long countByExample(OmsCartItemExample example);
 
     int deleteByExample(OmsCartItemExample example);

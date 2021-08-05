@@ -25,7 +25,7 @@ import javax.annotation.PostConstruct;
 @EnableConfigurationProperties
 public class OrderMessageSender {
 
-    @Value("${scheduleTopic}")
+    @Value("${rocketmq.faichuismaill.scheduleTopic}")
     private String scheduleTopic;
 
     @Value("${rocketmq.faichuismaill.transGroup}")

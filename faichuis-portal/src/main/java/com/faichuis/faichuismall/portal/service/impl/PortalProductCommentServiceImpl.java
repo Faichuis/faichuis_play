@@ -9,7 +9,6 @@ import com.faichuis.faichuismall.model.UmsMember;
 import com.faichuis.faichuismall.portal.dao.PortalProductCommentDao;
 import com.faichuis.faichuismall.portal.domain.PmsCommentParam;
 import com.faichuis.faichuismall.portal.service.PortalProductCommentService;
-import com.github.pagehelper.PageHelper;
 import com.faichuis.faichuismall.portal.feignapi.ums.UmsMemberFeignApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,7 +44,7 @@ public class PortalProductCommentServiceImpl implements PortalProductCommentServ
      */
     @Override
     public CommonResult<List<PmsCommentParam>> getCommentList(Long productId, Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
+        //PageHelper.startPage(pageNum,pageSize);
         return CommonResult.success(productCommentDao.getCommentList(productId));
     }
 

@@ -1,12 +1,14 @@
 package com.faichuis.faichuismall.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.faichuis.faichuismall.entity.CmsTopicDO;
 import com.faichuis.faichuismall.model.CmsTopic;
 import com.faichuis.faichuismall.model.CmsTopicExample;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface CmsTopicMapper {
+public interface CmsTopicMapper extends BaseMapper<CmsTopicDO> {
     long countByExample(CmsTopicExample example);
 
     int deleteByExample(CmsTopicExample example);

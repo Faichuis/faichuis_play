@@ -1,10 +1,5 @@
 package com.faichuis.faichuismall.clientapi;
 
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 
 /**
 * @vlog: 高于生活，源于生活

@@ -5,6 +5,7 @@ import com.faichuis.faichuismall.mapper.UmsMemberMapper;
 import com.faichuis.faichuismall.mapper.UmsMemberMemberTagRelationMapper;
 import com.faichuis.faichuismall.model.UmsMember;
 import com.faichuis.faichuismall.model.UmsMemberExample;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -73,7 +74,8 @@ public class UserDetailService implements UserDetailsService {
     public UmsMember getByUsername(String username) {
         UmsMemberExample example = new UmsMemberExample();
         example.createCriteria().andUsernameEqualTo(username);
-        List<UmsMember> memberList = memberMapper.selectByExample(example);
+        List<UmsMember> memberList = Lists.newArrayList();
+//        memberMapper.selectByExample(example);
         if (!CollectionUtils.isEmpty(memberList)) {
             return memberList.get(0);
         }

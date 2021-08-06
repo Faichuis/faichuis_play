@@ -1,9 +1,9 @@
 package com.faichuis.faichuismall.service.impl;
 
 
+import com.faichuis.faichuismall.repository.MemberReadHistoryRepository;
 import com.faichuis.faichuismall.domain.MemberReadHistory;
 import com.faichuis.faichuismall.service.MemberReadHistoryService;
-import com.faichuis.faichuismall.repository.MemberReadHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

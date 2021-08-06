@@ -1,5 +1,6 @@
 package com.faichuis.faichuismall.service.impl;
 
+import com.faichuis.faichuismall.constant.MDA;
 import com.faichuis.faichuismall.mapper.UmsMemberLevelMapper;
 import com.faichuis.faichuismall.mapper.UmsMemberMapper;
 import com.faichuis.faichuismall.model.UmsMember;
@@ -9,7 +10,6 @@ import com.faichuis.faichuismall.model.UmsMemberLevelExample;
 import com.faichuis.faichuismall.common.api.CommonResult;
 import com.faichuis.faichuismall.common.api.TokenInfo;
 
-import com.faichuis.faichuismall.constant.MDA;
 import com.faichuis.faichuismall.service.RedisService;
 import com.faichuis.faichuismall.service.UmsMemberService;
 import org.slf4j.Logger;

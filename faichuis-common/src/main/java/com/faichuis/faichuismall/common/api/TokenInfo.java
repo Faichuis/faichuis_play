@@ -5,7 +5,6 @@ package com.faichuis.faichuismall.common.api;
 
 import lombok.Data;
 
-import java.util.Date;
 import java.util.Map;
 
 /**

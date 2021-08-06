@@ -1,8 +1,8 @@
 package com.faichuis.faichuismall.service.impl;
 
 
-import com.faichuis.faichuismall.domain.MemberProductCollection;
 import com.faichuis.faichuismall.repository.MemberProductCollectionRepository;
+import com.faichuis.faichuismall.domain.MemberProductCollection;
 import com.faichuis.faichuismall.service.MemberCollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

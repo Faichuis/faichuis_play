@@ -4,9 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
 
-import com.faichuis.faichuismall.domain.PmsProductParam;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.joker.product.dto.entity.PmsProductParamDO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LocalCache {
 
-    private Cache<String, PmsProductParam> localCache = null;
+    private Cache<String, PmsProductParamDO> localCache = null;
 
     @PostConstruct
     private void init(){
@@ -35,11 +35,11 @@ public class LocalCache {
     }
 
 
-    public void setLocalCache(String key,PmsProductParam object){
+    public void setLocalCache(String key,PmsProductParamDO object){
         localCache.put(key,object);
     }
 
-    public PmsProductParam get(String key){
+    public PmsProductParamDO get(String key){
        return localCache.getIfPresent(key);
     }
 

@@ -4,12 +4,12 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
-import com.faichuis.faichuismall.dao.FlashPromotionProductDao;
-import com.faichuis.faichuismall.domain.FlashPromotionParam;
-import com.faichuis.faichuismall.util.RedisOpsUtil;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.joker.product.common.util.RedisOpsUtil;
+import com.joker.product.dto.entity.FlashPromotionParamDO;
+import com.joker.product.dto.mapper.FlashPromotionProductMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +64,7 @@ public class RedisConifg implements InitializingBean {
     }
 
     @Autowired
-    private FlashPromotionProductDao flashPromotionProductDao;
+    private FlashPromotionProductMapper flashPromotionProductMapper;
 
     /**
      * 加载所有的秒杀活动商品库存到缓存redis中
@@ -73,7 +73,7 @@ public class RedisConifg implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         //todo  获取所有的秒杀活动中商品
-        FlashPromotionParam promotion = flashPromotionProductDao.getFlashPromotion(null);
+        FlashPromotionParamDO promotion = flashPromotionProductMapper.getFlashPromotion(null);
         Date now = new Date();
         Date endDate = promotion.getEndDate();//结束时间
         final Long expired = endDate.getTime()-now.getTime();//剩余时间

@@ -1,6 +1,6 @@
 package com.joker.product.common.config;
 
-import com.faichuis.faichuismall.intercepter.BloomFilterInterceptor;
+import com.joker.product.common.intercepter.BloomFilterInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

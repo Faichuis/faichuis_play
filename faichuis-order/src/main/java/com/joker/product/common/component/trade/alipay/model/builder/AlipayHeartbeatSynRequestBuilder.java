@@ -7,7 +7,6 @@ import com.joker.product.common.component.trade.alipay.model.hb.Product;
 import com.joker.product.common.component.trade.alipay.model.hb.SysTradeInfo;
 import com.joker.product.common.component.trade.alipay.model.hb.TradeInfo;
 import com.joker.product.common.component.trade.alipay.model.hb.Type;
-import com.iwhalecloud.digital.expo.service.component.trade.alipay.model.hb.*;
 import com.joker.product.common.component.trade.alipay.utils.Utils;
 import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang.StringUtils;

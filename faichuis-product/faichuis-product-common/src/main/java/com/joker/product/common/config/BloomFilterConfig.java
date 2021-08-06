@@ -3,11 +3,11 @@ package com.joker.product.common.config;
 import java.util.List;
 
 import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
-import com.faichuis.faichuismall.service.PmsProductService;
-import com.faichuis.faichuismall.util.BloomFilterHelper;
 import com.google.common.base.Charsets;
 import com.google.common.hash.Funnel;
+import com.joker.product.api.service.product.PmsProductService;
 import com.joker.product.common.component.BloomRedisService;
+import com.joker.product.common.util.BloomFilterHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ public class BloomFilterConfig implements InitializingBean{
     private RedisTemplate template;
 
     @Bean
-    public BloomFilterHelper<String> initBloomFilterHelper() {
+    public BloomFilterHelper initBloomFilterHelper() {
         return new BloomFilterHelper<>((Funnel<String>) (from, into) -> into.putString(from, Charsets.UTF_8)
                 .putString(from, Charsets.UTF_8), 1000000, 0.01);
     }

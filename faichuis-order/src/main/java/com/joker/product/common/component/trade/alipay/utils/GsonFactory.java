@@ -6,7 +6,6 @@ import com.joker.product.common.component.trade.alipay.model.hb.ExceptionInfo;
 import com.joker.product.common.component.trade.alipay.model.hb.ExceptionInfoAdapter;
 import com.joker.product.common.component.trade.alipay.model.hb.TradeInfo;
 import com.joker.product.common.component.trade.alipay.model.hb.TradeInfoAdapter;
-import com.iwhalecloud.digital.expo.service.component.trade.alipay.model.hb.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;

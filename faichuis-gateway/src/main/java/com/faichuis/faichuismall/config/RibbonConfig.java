@@ -1,6 +1,6 @@
 package com.faichuis.faichuismall.config;
 
-import com.faichuis.faichuismall.component.FaichuisRestTemplate;
+import com.joker.product.common.component.FaichuisRestTemplate;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

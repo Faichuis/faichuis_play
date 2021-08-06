@@ -2,7 +2,7 @@ package com.faichuis.faichuismall.controller;
 
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.internal.util.AlipaySignature;
-import com.faichuis.faichuismall.component.trade.alipay.config.Configs;
+import com.joker.product.common.component.trade.alipay.config.Configs;
 import com.faichuis.faichuismall.domain.ConfirmOrderResult;
 import com.faichuis.faichuismall.domain.MqCancelOrder;
 import com.faichuis.faichuismall.domain.OmsOrderDetail;

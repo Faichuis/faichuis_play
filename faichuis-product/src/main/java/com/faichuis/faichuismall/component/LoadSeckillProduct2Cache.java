@@ -1,17 +1,17 @@
 package com.faichuis.faichuismall.component;
 
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
 import com.faichuis.faichuismall.dao.FlashPromotionProductDao;
 import com.faichuis.faichuismall.domain.FlashPromotionParam;
 import com.faichuis.faichuismall.model.SmsFlashPromotion;
-import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.ObjectUtils;
-
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author ：杨过

@@ -4,7 +4,7 @@ import com.faichuis.faichuismall.util.RedisOpsUtil;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.faichuis.faichuismall.component.RedisChannelListener;
+import com.joker.product.common.component.RedisChannelListener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

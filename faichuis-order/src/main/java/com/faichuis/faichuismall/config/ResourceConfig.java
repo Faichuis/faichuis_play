@@ -1,6 +1,6 @@
 package com.faichuis.faichuismall.config;
 
-import com.faichuis.faichuismall.component.TradePayProp;
+import com.joker.product.common.component.TradePayProp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

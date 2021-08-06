@@ -13,18 +13,18 @@ import com.faichuis.faichuismall.service.TradeService;
 import com.faichuis.faichuismall.common.api.CommonResult;
 
 
-import com.faichuis.faichuismall.component.TradePayProp;
-import com.faichuis.faichuismall.component.trade.alipay.config.Configs;
-import com.faichuis.faichuismall.component.trade.alipay.model.ExtendParams;
-import com.faichuis.faichuismall.component.trade.alipay.model.GoodsDetail;
-import com.faichuis.faichuismall.component.trade.alipay.model.builder.AlipayTradePrecreateRequestBuilder;
-import com.faichuis.faichuismall.component.trade.alipay.model.builder.AlipayTradeQueryRequestBuilder;
-import com.faichuis.faichuismall.component.trade.alipay.model.result.AlipayF2FPrecreateResult;
-import com.faichuis.faichuismall.component.trade.alipay.model.result.AlipayF2FQueryResult;
-import com.faichuis.faichuismall.component.trade.alipay.service.AlipayTradeService;
-import com.faichuis.faichuismall.component.trade.alipay.service.impl.AlipayTradeServiceImpl;
-import com.faichuis.faichuismall.component.trade.alipay.utils.Utils;
-import com.faichuis.faichuismall.component.trade.alipay.utils.ZxingUtils;
+import com.joker.product.common.component.TradePayProp;
+import com.joker.product.common.component.trade.alipay.config.Configs;
+import com.joker.product.common.component.trade.alipay.model.ExtendParams;
+import com.joker.product.common.component.trade.alipay.model.GoodsDetail;
+import com.joker.product.common.component.trade.alipay.model.builder.AlipayTradePrecreateRequestBuilder;
+import com.joker.product.common.component.trade.alipay.model.builder.AlipayTradeQueryRequestBuilder;
+import com.joker.product.common.component.trade.alipay.model.result.AlipayF2FPrecreateResult;
+import com.joker.product.common.component.trade.alipay.model.result.AlipayF2FQueryResult;
+import com.joker.product.common.component.trade.alipay.service.AlipayTradeService;
+import com.joker.product.common.component.trade.alipay.service.impl.AlipayTradeServiceImpl;
+import com.joker.product.common.component.trade.alipay.utils.Utils;
+import com.joker.product.common.component.trade.alipay.utils.ZxingUtils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;

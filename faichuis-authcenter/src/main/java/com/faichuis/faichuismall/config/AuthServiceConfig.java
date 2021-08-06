@@ -1,7 +1,7 @@
 package com.faichuis.faichuismall.config;
 
 
-import com.faichuis.faichuismall.component.FaichuisTokenEnhancer;
+import com.joker.product.common.component.FaichuisTokenEnhancer;
 import com.faichuis.faichuismall.properties.JwtCAProperties;
 import com.faichuis.faichuismall.service.UserDetailService;
 import org.springframework.context.annotation.Bean;

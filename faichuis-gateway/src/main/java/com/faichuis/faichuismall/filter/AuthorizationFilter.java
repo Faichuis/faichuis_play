@@ -2,7 +2,7 @@ package com.faichuis.faichuismall.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.faichuis.faichuismall.utils.JwtUtils;
-import com.faichuis.faichuismall.component.FaichuisRestTemplate;
+import com.joker.product.common.component.FaichuisRestTemplate;
 import com.faichuis.faichuismall.common.api.ResultCode;
 import com.faichuis.faichuismall.common.exception.GateWayException;
 import com.faichuis.faichuismall.properties.NotAuthUrlProperties;

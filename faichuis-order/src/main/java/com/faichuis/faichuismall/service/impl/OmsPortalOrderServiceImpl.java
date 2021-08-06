@@ -12,7 +12,7 @@ import com.github.pagehelper.PageHelper;
 import com.faichuis.faichuismall.common.api.CommonResult;
 import com.faichuis.faichuismall.common.api.ResultCode;
 import com.faichuis.faichuismall.common.exception.BusinessException;
-import com.faichuis.faichuismall.component.CancelOrderSender;
+import com.joker.product.common.component.CancelOrderSender;
 import com.faichuis.faichuismall.feignapi.pms.PmsProductFeignApi;
 import com.faichuis.faichuismall.feignapi.ums.UmsCouponFeignApi;
 import com.faichuis.faichuismall.feignapi.ums.UmsMemberFeignApi;

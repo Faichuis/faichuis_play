@@ -1,34 +1,39 @@
 package com.faichuis.faichuismall.service.impl;
 
-import com.faichuis.faichuismall.dao.FlashPromotionProductDao;
-import com.faichuis.faichuismall.dao.PortalProductDao;
-import com.faichuis.faichuismall.domain.*;
-import com.faichuis.faichuismall.mapper.SmsFlashPromotionMapper;
-import com.faichuis.faichuismall.mapper.SmsFlashPromotionSessionMapper;
-import com.faichuis.faichuismall.model.SmsFlashPromotion;
-import com.faichuis.faichuismall.model.SmsFlashPromotionExample;
-import com.faichuis.faichuismall.model.SmsFlashPromotionSession;
-import com.faichuis.faichuismall.model.SmsFlashPromotionSessionExample;
-import com.faichuis.faichuismall.util.DateUtil;
-import com.faichuis.faichuismall.util.RedisOpsUtil;
-import com.github.pagehelper.PageHelper;
-import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
-import com.faichuis.faichuismall.component.LocalCache;
-import com.faichuis.faichuismall.component.zklock.ZKLock;
-import com.faichuis.faichuismall.service.PmsProductService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.ObjectUtils;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
+
+import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
+import com.faichuis.faichuismall.component.LocalCache;
+import com.faichuis.faichuismall.component.zklock.ZKLock;
+import com.faichuis.faichuismall.dao.FlashPromotionProductDao;
+import com.faichuis.faichuismall.dao.PortalProductDao;
+import com.faichuis.faichuismall.domain.CartProduct;
+import com.faichuis.faichuismall.domain.FlashPromotionParam;
+import com.faichuis.faichuismall.domain.FlashPromotionProduct;
+import com.faichuis.faichuismall.domain.FlashPromotionSessionExt;
+import com.faichuis.faichuismall.domain.PmsProductParam;
+import com.faichuis.faichuismall.domain.PromotionProduct;
+import com.faichuis.faichuismall.mapper.SmsFlashPromotionMapper;
+import com.faichuis.faichuismall.mapper.SmsFlashPromotionSessionMapper;
+import com.faichuis.faichuismall.model.SmsFlashPromotion;
+import com.faichuis.faichuismall.model.SmsFlashPromotionExample;
+import com.faichuis.faichuismall.model.SmsFlashPromotionSession;
+import com.faichuis.faichuismall.model.SmsFlashPromotionSessionExample;
+import com.faichuis.faichuismall.service.PmsProductService;
+import com.faichuis.faichuismall.util.DateUtil;
+import com.faichuis.faichuismall.util.RedisOpsUtil;
+import com.github.pagehelper.PageHelper;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.ObjectUtils;
 
 /**
  *                  ,;,,;

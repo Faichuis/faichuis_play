@@ -1,10 +1,10 @@
 package com.faichuis.faichuismall.config;
 
+import com.faichuis.faichuismall.component.BloomRedisService;
 import com.faichuis.faichuismall.util.BloomFilterHelper;
 import com.google.common.base.Charsets;
 import com.google.common.hash.Funnel;
 import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
-import com.faichuis.faichuismall.component.BloomRedisService;
 import com.faichuis.faichuismall.service.PmsProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;

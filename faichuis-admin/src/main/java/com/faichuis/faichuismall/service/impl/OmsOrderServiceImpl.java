@@ -9,7 +9,6 @@ import com.faichuis.faichuismall.model.OmsOrder;
 import com.faichuis.faichuismall.model.OmsOrderExample;
 import com.faichuis.faichuismall.model.OmsOrderOperateHistory;
 import com.faichuis.faichuismall.service.OmsOrderService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +33,6 @@ public class OmsOrderServiceImpl implements OmsOrderService {
 
     @Override
     public List<OmsOrder> list(OmsOrderQueryParam queryParam, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
         return orderDao.getList(queryParam);
     }
 

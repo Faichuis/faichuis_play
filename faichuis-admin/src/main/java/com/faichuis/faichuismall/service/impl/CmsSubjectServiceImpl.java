@@ -4,7 +4,6 @@ import com.faichuis.faichuismall.mapper.CmsSubjectMapper;
 import com.faichuis.faichuismall.model.CmsSubject;
 import com.faichuis.faichuismall.model.CmsSubjectExample;
 import com.faichuis.faichuismall.service.CmsSubjectService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -27,7 +26,6 @@ public class CmsSubjectServiceImpl implements CmsSubjectService {
 
     @Override
     public List<CmsSubject> list(String keyword, Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
         CmsSubjectExample example = new CmsSubjectExample();
         CmsSubjectExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(keyword)) {

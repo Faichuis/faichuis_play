@@ -4,7 +4,6 @@ import com.faichuis.faichuismall.mapper.OmsOrderReturnReasonMapper;
 import com.faichuis.faichuismall.model.OmsOrderReturnReason;
 import com.faichuis.faichuismall.model.OmsOrderReturnReasonExample;
 import com.faichuis.faichuismall.service.OmsOrderReturnReasonService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +39,6 @@ public class OmsOrderReturnReasonServiceImpl implements OmsOrderReturnReasonServ
 
     @Override
     public List<OmsOrderReturnReason> list(Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
         OmsOrderReturnReasonExample example = new OmsOrderReturnReasonExample();
         example.setOrderByClause("sort desc");
         return returnReasonMapper.selectByExample(example);

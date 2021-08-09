@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.joker.product.api.common.resp.PmsProductServiceResp;
 import com.joker.product.dto.entity.PmsProductParamDO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LocalCache {
 
-    private Cache<String, PmsProductParamDO> localCache = null;
+    private Cache<String, PmsProductServiceResp> localCache = null;
 
     @PostConstruct
     private void init(){
@@ -35,11 +36,11 @@ public class LocalCache {
     }
 
 
-    public void setLocalCache(String key,PmsProductParamDO object){
+    public void setLocalCache(String key, PmsProductServiceResp object){
         localCache.put(key,object);
     }
 
-    public PmsProductParamDO get(String key){
+    public PmsProductServiceResp get(String key){
        return localCache.getIfPresent(key);
     }
 

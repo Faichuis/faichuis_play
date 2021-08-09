@@ -5,7 +5,7 @@ import com.faichuis.faichuismall.properties.NotAuthUrlProperties;
 import com.faichuis.faichuismall.utils.JwtUtils;
 import com.faichuis.faichuismall.common.api.ResultCode;
 import com.faichuis.faichuismall.common.exception.GateWayException;
-import com.joker.product.common.component.FaichuisRestTemplate;
+import com.faichuis.faichuismall.component.FaichuisRestTemplate;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

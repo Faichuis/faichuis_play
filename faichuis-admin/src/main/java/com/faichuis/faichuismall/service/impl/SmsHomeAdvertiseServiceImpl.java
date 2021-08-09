@@ -4,7 +4,6 @@ import com.faichuis.faichuismall.mapper.SmsHomeAdvertiseMapper;
 import com.faichuis.faichuismall.model.SmsHomeAdvertise;
 import com.faichuis.faichuismall.model.SmsHomeAdvertiseExample;
 import com.faichuis.faichuismall.service.SmsHomeAdvertiseService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -58,7 +57,6 @@ public class SmsHomeAdvertiseServiceImpl implements SmsHomeAdvertiseService {
 
     @Override
     public List<SmsHomeAdvertise> list(String name, Integer type, String endTime, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
         SmsHomeAdvertiseExample example = new SmsHomeAdvertiseExample();
         SmsHomeAdvertiseExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(name)) {

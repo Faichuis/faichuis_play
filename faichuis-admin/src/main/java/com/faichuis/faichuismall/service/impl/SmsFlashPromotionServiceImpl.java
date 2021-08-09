@@ -4,7 +4,6 @@ import com.faichuis.faichuismall.mapper.SmsFlashPromotionMapper;
 import com.faichuis.faichuismall.model.SmsFlashPromotion;
 import com.faichuis.faichuismall.model.SmsFlashPromotionExample;
 import com.faichuis.faichuismall.service.SmsFlashPromotionService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -53,7 +52,6 @@ public class SmsFlashPromotionServiceImpl implements SmsFlashPromotionService {
 
     @Override
     public List<SmsFlashPromotion> list(String keyword, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
         SmsFlashPromotionExample example = new SmsFlashPromotionExample();
         if (!StringUtils.isEmpty(keyword)) {
             example.createCriteria().andTitleLike("%" + keyword + "%");

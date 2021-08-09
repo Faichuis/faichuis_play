@@ -4,7 +4,6 @@ import com.faichuis.faichuismall.mapper.SmsHomeRecommendProductMapper;
 import com.faichuis.faichuismall.model.SmsHomeRecommendProduct;
 import com.faichuis.faichuismall.model.SmsHomeRecommendProductExample;
 import com.faichuis.faichuismall.service.SmsHomeRecommendProductService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -55,7 +54,6 @@ public class SmsHomeRecommendProductServiceImpl implements SmsHomeRecommendProdu
 
     @Override
     public List<SmsHomeRecommendProduct> list(String productName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
         SmsHomeRecommendProductExample example = new SmsHomeRecommendProductExample();
         SmsHomeRecommendProductExample.Criteria criteria = example.createCriteria();
         if(!StringUtils.isEmpty(productName)){

@@ -6,7 +6,6 @@ import com.faichuis.faichuismall.mapper.SmsFlashPromotionProductRelationMapper;
 import com.faichuis.faichuismall.model.SmsFlashPromotionProductRelation;
 import com.faichuis.faichuismall.model.SmsFlashPromotionProductRelationExample;
 import com.faichuis.faichuismall.service.SmsFlashPromotionProductRelationService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +47,6 @@ public class SmsFlashPromotionProductRelationServiceImpl implements SmsFlashProm
 
     @Override
     public List<SmsFlashPromotionProduct> list(Long flashPromotionId, Long flashPromotionSessionId, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
         return relationDao.getList(flashPromotionId,flashPromotionSessionId);
     }
 

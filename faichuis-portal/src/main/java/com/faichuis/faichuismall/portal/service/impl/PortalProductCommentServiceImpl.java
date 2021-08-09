@@ -44,7 +44,6 @@ public class PortalProductCommentServiceImpl implements PortalProductCommentServ
      */
     @Override
     public CommonResult<List<PmsCommentParam>> getCommentList(Long productId, Integer pageNum, Integer pageSize) {
-        //PageHelper.startPage(pageNum,pageSize);
         return CommonResult.success(productCommentDao.getCommentList(productId));
     }
 

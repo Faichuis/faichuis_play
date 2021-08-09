@@ -9,7 +9,6 @@ import com.faichuis.faichuismall.model.PmsProductAttribute;
 import com.faichuis.faichuismall.model.PmsProductAttributeCategory;
 import com.faichuis.faichuismall.model.PmsProductAttributeExample;
 import com.faichuis.faichuismall.service.PmsProductAttributeService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +30,6 @@ public class PmsProductAttributeServiceImpl implements PmsProductAttributeServic
 
     @Override
     public List<PmsProductAttribute> getList(Long cid, Integer type, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
         PmsProductAttributeExample example = new PmsProductAttributeExample();
         example.setOrderByClause("sort desc");
         example.createCriteria().andProductAttributeCategoryIdEqualTo(cid).andTypeEqualTo(type);

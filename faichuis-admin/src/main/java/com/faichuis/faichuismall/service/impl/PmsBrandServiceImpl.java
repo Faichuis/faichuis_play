@@ -8,7 +8,6 @@ import com.faichuis.faichuismall.model.PmsBrandExample;
 import com.faichuis.faichuismall.model.PmsProduct;
 import com.faichuis.faichuismall.model.PmsProductExample;
 import com.faichuis.faichuismall.service.PmsBrandService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,7 +74,6 @@ public class PmsBrandServiceImpl implements PmsBrandService {
 
     @Override
     public List<PmsBrand> listBrand(String keyword, int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
         PmsBrandExample pmsBrandExample = new PmsBrandExample();
         pmsBrandExample.setOrderByClause("sort desc");
         PmsBrandExample.Criteria criteria = pmsBrandExample.createCriteria();

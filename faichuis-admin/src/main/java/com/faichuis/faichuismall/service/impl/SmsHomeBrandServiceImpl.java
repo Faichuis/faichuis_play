@@ -4,7 +4,6 @@ import com.faichuis.faichuismall.mapper.SmsHomeBrandMapper;
 import com.faichuis.faichuismall.model.SmsHomeBrand;
 import com.faichuis.faichuismall.model.SmsHomeBrandExample;
 import com.faichuis.faichuismall.service.SmsHomeBrandService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -55,7 +54,6 @@ public class SmsHomeBrandServiceImpl implements SmsHomeBrandService {
 
     @Override
     public List<SmsHomeBrand> list(String brandName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
         SmsHomeBrandExample example = new SmsHomeBrandExample();
         SmsHomeBrandExample.Criteria criteria = example.createCriteria();
         if(!StringUtils.isEmpty(brandName)){

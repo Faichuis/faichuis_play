@@ -6,7 +6,6 @@ import com.faichuis.faichuismall.mapper.PmsProductAttributeCategoryMapper;
 import com.faichuis.faichuismall.model.PmsProductAttributeCategory;
 import com.faichuis.faichuismall.model.PmsProductAttributeCategoryExample;
 import com.faichuis.faichuismall.service.PmsProductAttributeCategoryService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,7 +49,6 @@ public class PmsProductAttributeCategoryServiceImpl implements PmsProductAttribu
 
     @Override
     public List<PmsProductAttributeCategory> getList(Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
         return productAttributeCategoryMapper.selectByExample(new PmsProductAttributeCategoryExample());
     }
 

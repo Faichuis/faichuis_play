@@ -9,6 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class TulingmallCouponsApplication {
 
 	public static void main(String[] args) {
+		System.out.println();
 		SpringApplication.run(TulingmallCouponsApplication.class, args);
 	}
 

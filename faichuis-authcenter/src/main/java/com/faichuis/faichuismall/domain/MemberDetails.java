@@ -1,6 +1,7 @@
 package com.faichuis.faichuismall.domain;
 
-import com.faichuis.faichuismall.model.UmsMember;
+import com.faichuis.faichuismall.entity.UmsMemberDO;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,10 +13,12 @@ import java.util.Collection;
  * 会员详情封装
  * Created by macro on 2018/8/3.
  */
+@Data
 public class MemberDetails implements UserDetails {
-    private UmsMember umsMember;
 
-    public MemberDetails(UmsMember umsMember) {
+    private UmsMemberDO umsMember;
+
+    public MemberDetails(UmsMemberDO umsMember) {
         this.umsMember = umsMember;
     }
 
@@ -55,7 +58,4 @@ public class MemberDetails implements UserDetails {
         return umsMember.getStatus()==1;
     }
 
-    public UmsMember getUmsMember() {
-        return umsMember;
-    }
 }

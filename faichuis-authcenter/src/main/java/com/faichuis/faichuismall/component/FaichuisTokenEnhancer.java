@@ -1,4 +1,4 @@
-package com.faichuis.faichuismall.coomponent;
+package com.faichuis.faichuismall.component;
 
 import com.faichuis.faichuismall.domain.MemberDetails;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;

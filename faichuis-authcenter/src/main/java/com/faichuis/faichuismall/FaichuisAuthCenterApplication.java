@@ -11,8 +11,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class FaichuisAuthCenterApplication {
 
     public static void main(String[] args) {
-//        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
-//        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext();
         SpringApplication.run(FaichuisAuthCenterApplication.class, args);
     }
 }

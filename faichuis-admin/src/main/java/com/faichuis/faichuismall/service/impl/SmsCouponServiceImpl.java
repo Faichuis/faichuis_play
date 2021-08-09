@@ -10,7 +10,6 @@ import com.faichuis.faichuismall.mapper.SmsCouponProductRelationMapper;
 import com.faichuis.faichuismall.mapper.UmsMemberMemberTagRelationMapper;
 import com.faichuis.faichuismall.model.*;
 import com.faichuis.faichuismall.service.SmsCouponService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -117,7 +116,6 @@ public class SmsCouponServiceImpl implements SmsCouponService {
         if(type!=null){
             criteria.andTypeEqualTo(type);
         }
-        PageHelper.startPage(pageNum,pageSize);
         return couponMapper.selectByExample(example);
     }
 

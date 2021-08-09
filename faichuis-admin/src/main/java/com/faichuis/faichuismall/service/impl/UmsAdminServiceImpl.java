@@ -11,7 +11,6 @@ import com.faichuis.faichuismall.mapper.UmsAdminRoleRelationMapper;
 import com.faichuis.faichuismall.model.*;
 import com.faichuis.faichuismall.security.util.JwtTokenUtil;
 import com.faichuis.faichuismall.service.UmsAdminService;
-import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -147,7 +146,6 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public List<UmsAdmin> list(String name, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
         UmsAdminExample example = new UmsAdminExample();
         UmsAdminExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(name)) {

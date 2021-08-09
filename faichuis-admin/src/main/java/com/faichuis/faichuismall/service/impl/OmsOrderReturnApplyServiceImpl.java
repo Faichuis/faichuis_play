@@ -8,7 +8,6 @@ import com.faichuis.faichuismall.mapper.OmsOrderReturnApplyMapper;
 import com.faichuis.faichuismall.model.OmsOrderReturnApply;
 import com.faichuis.faichuismall.model.OmsOrderReturnApplyExample;
 import com.faichuis.faichuismall.service.OmsOrderReturnApplyService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +26,6 @@ public class OmsOrderReturnApplyServiceImpl implements OmsOrderReturnApplyServic
     private OmsOrderReturnApplyMapper returnApplyMapper;
     @Override
     public List<OmsOrderReturnApply> list(OmsReturnApplyQueryParam queryParam, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
         return returnApplyDao.getList(queryParam);
     }
 

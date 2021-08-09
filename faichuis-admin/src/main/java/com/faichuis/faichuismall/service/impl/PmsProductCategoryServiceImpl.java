@@ -9,7 +9,6 @@ import com.faichuis.faichuismall.mapper.PmsProductCategoryMapper;
 import com.faichuis.faichuismall.mapper.PmsProductMapper;
 import com.faichuis.faichuismall.model.*;
 import com.faichuis.faichuismall.service.PmsProductCategoryService;
-import com.github.pagehelper.PageHelper;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,7 +93,6 @@ public class PmsProductCategoryServiceImpl implements PmsProductCategoryService 
 
     @Override
     public List<PmsProductCategory> getList(Long parentId, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
         PmsProductCategoryExample example = new PmsProductCategoryExample();
         example.setOrderByClause("sort desc");
         example.createCriteria().andParentIdEqualTo(parentId);

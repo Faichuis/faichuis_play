@@ -4,7 +4,6 @@ import com.faichuis.faichuismall.mapper.SmsCouponHistoryMapper;
 import com.faichuis.faichuismall.model.SmsCouponHistory;
 import com.faichuis.faichuismall.model.SmsCouponHistoryExample;
 import com.faichuis.faichuismall.service.SmsCouponHistoryService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -21,7 +20,6 @@ public class SmsCouponHistoryServiceImpl implements SmsCouponHistoryService {
     private SmsCouponHistoryMapper historyMapper;
     @Override
     public List<SmsCouponHistory> list(Long couponId, Integer useStatus, String orderSn, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
         SmsCouponHistoryExample example = new SmsCouponHistoryExample();
         SmsCouponHistoryExample.Criteria criteria = example.createCriteria();
         if(couponId!=null){

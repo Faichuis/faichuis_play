@@ -4,7 +4,6 @@ import com.faichuis.faichuismall.mapper.SmsHomeRecommendSubjectMapper;
 import com.faichuis.faichuismall.model.SmsHomeRecommendSubject;
 import com.faichuis.faichuismall.model.SmsHomeRecommendSubjectExample;
 import com.faichuis.faichuismall.service.SmsHomeRecommendSubjectService;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -55,7 +54,6 @@ public class SmsHomeRecommendSubjectServiceImpl implements SmsHomeRecommendSubje
 
     @Override
     public List<SmsHomeRecommendSubject> list(String subjectName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
         SmsHomeRecommendSubjectExample example = new SmsHomeRecommendSubjectExample();
         SmsHomeRecommendSubjectExample.Criteria criteria = example.createCriteria();
         if(!StringUtils.isEmpty(subjectName)){

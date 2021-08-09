@@ -2,7 +2,7 @@ package com.faichuis.faichuismall.clientapi;
 
 import com.faichuis.faichuismall.common.api.CommonResult;
 import com.faichuis.faichuismall.model.UmsMember;
-import com.faichuis.faichuismall.config.UmsMemberFeignConfig;
+import com.joker.product.config.UmsMemberFeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

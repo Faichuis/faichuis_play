@@ -1,15 +1,14 @@
 package com.faichuis.faichuismall;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@EnableDiscoveryClient
 @SpringBootApplication
-public class MallGatewayApplication {
+@MapperScan("com.faichuis.faichuismall.*")
+public class FaichuisAuthCenterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MallGatewayApplication.class, args);
+        SpringApplication.run(FaichuisAuthCenterApplication.class, args);
     }
-
 }

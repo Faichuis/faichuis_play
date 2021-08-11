@@ -1,21 +1,18 @@
 package com.faichuis.faichuismall.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.faichuis.faichuismall.domain.MemberDetails;
+import com.faichuis.faichuismall.entity.UmsMemberDO;
 import com.faichuis.faichuismall.mapper.UmsMemberMapper;
 import com.faichuis.faichuismall.mapper.UmsMemberMemberTagRelationMapper;
-import com.faichuis.faichuismall.model.UmsMember;
-import com.faichuis.faichuismall.model.UmsMemberExample;
-import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
 * @vlog: 高于生活，源于生活
@@ -50,7 +47,7 @@ public class UserDetailService implements UserDetailsService {
             throw new UsernameNotFoundException("用户名不能为空");
         }
 
-        UmsMember umsMember = getByUsername(userName);
+        UmsMemberDO umsMember = getByUsername(userName);
 
         if(null == umsMember) {
             log.warn("根据用户名没有查询到对应的用户信息:{}",userName);
@@ -71,14 +68,10 @@ public class UserDetailService implements UserDetailsService {
      * @exception:
      * @date:2020/1/21 21:34
      */
-    public UmsMember getByUsername(String username) {
-        UmsMemberExample example = new UmsMemberExample();
-        example.createCriteria().andUsernameEqualTo(username);
-        List<UmsMember> memberList = Lists.newArrayList();
-//        memberMapper.selectByExample(example);
-        if (!CollectionUtils.isEmpty(memberList)) {
-            return memberList.get(0);
-        }
-        return null;
+    public UmsMemberDO getByUsername(String username) {
+        LambdaQueryWrapper<UmsMemberDO> queryWrapper = new LambdaQueryWrapper<UmsMemberDO>()
+                .eq(UmsMemberDO::getUsername, username);
+        UmsMemberDO umsMemberDO = memberMapper.selectOne(queryWrapper);
+        return umsMemberDO;
     }
 }

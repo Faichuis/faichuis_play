@@ -2,9 +2,9 @@ package com.joker.product.dto.entity;
 
 import java.util.List;
 
+import com.faichuis.faichuismall.entity.PmsProductAttribute;
+import com.faichuis.faichuismall.entity.PmsSkuStock;
 import com.faichuis.faichuismall.model.PmsProduct;
-import com.faichuis.faichuismall.model.PmsProductAttribute;
-import com.faichuis.faichuismall.model.PmsSkuStock;
 
 /**
  * 购物车中选择规格的商品信息

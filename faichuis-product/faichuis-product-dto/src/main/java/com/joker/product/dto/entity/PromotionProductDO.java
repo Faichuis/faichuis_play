@@ -2,10 +2,10 @@ package com.joker.product.dto.entity;
 
 import java.util.List;
 
+import com.faichuis.faichuismall.entity.PmsProductFullReduction;
+import com.faichuis.faichuismall.entity.PmsProductLadder;
+import com.faichuis.faichuismall.entity.PmsSkuStock;
 import com.faichuis.faichuismall.model.PmsProduct;
-import com.faichuis.faichuismall.model.PmsProductFullReduction;
-import com.faichuis.faichuismall.model.PmsProductLadder;
-import com.faichuis.faichuismall.model.PmsSkuStock;
 
 /**
  * 商品的促销信息，包括sku、打折优惠、满减优惠

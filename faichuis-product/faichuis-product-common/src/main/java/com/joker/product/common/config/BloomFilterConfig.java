@@ -27,11 +27,11 @@ import org.springframework.util.CollectionUtils;
 @Configuration
 public class BloomFilterConfig implements InitializingBean{
 
-    @Autowired
-    private PmsProductService productService;
-
-    @Autowired
-    private RedisTemplate template;
+    //@Autowired
+    //private PmsProductService productService;
+    //
+    //@Autowired
+    //private RedisTemplate template;
 
     @Bean
     public BloomFilterHelper initBloomFilterHelper() {
@@ -47,19 +47,19 @@ public class BloomFilterConfig implements InitializingBean{
     public BloomRedisService bloomRedisService(){
         BloomRedisService bloomRedisService = new BloomRedisService();
         bloomRedisService.setBloomFilterHelper(initBloomFilterHelper());
-        bloomRedisService.setRedisTemplate(template);
+        //bloomRedisService.setRedisTemplate(template);
         return bloomRedisService;
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        List<Long> list = productService.getAllProductId();
-        log.info("加载产品到布隆过滤器当中,size:{}",list.size());
-        if(!CollectionUtils.isEmpty(list)){
-            list.stream().forEach(item->{
-                //LocalBloomFilter.put(item);
-                bloomRedisService().addByBloomFilter(RedisKeyPrefixConst.PRODUCT_REDIS_BLOOM_FILTER,item+"");
-            });
-        }
+        //List<Long> list = productService.getAllProductId();
+        //log.info("加载产品到布隆过滤器当中,size:{}",list.size());
+        //if(!CollectionUtils.isEmpty(list)){
+        //    list.stream().forEach(item->{
+        //        //LocalBloomFilter.put(item);
+        //        bloomRedisService().addByBloomFilter(RedisKeyPrefixConst.PRODUCT_REDIS_BLOOM_FILTER,item+"");
+        //    });
+        //}
     }
 }

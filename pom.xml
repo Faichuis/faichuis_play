@@ -30,12 +30,6 @@
 		<module>faichuis-product</module>
 		<module>faichuis-portal</module>
 		<module>faichuis-search</module>
-        <module>faichuis-product/faichuis-product-domain</module>
-		<module>faichuis-product/faichuis-product-service</module>
-		<module>faichuis-product/faichuis-product-dto</module>
-		<module>faichuis-product/faichuis-product-api</module>
-		<module>faichuis-product/faichuis-product-common</module>
-		<module>faichuis-product/faichuis-product-starter</module>
 	</modules>
 
 	<properties>

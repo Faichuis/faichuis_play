@@ -1,4 +1,4 @@
-package com.joker.product.controller.controller;
+package com.joker.product.controller;
 
 import java.util.List;
 

@@ -28,11 +28,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("" +
+        web.ignoring().antMatchers(
                 "/assets/**",
                 "/css/**",
                 "/images/**",
-                "/oauth/**");
+                "/oauth/check_token");
     }
 
     public static void main(String[] args) {

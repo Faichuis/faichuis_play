@@ -3,7 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>faichuis-member-client</module>
+		<module>faichuis-member-common</module>
+		<module>faichuis-member-dao</module>
+		<module>faichuis-member-domain</module>
+		<module>faichuis-member-feign</module>
+		<module>faichuis-member-service</module>
+		<module>faichuis-member-starter</module>
+	</modules>
+
+    <parent>
 		<groupId>com.faichuis</groupId>
 		<artifactId>faichuis-mall</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
@@ -19,6 +31,7 @@
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -54,19 +67,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 	</dependencies>
 

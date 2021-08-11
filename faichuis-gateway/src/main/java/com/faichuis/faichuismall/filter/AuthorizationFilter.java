@@ -24,6 +24,7 @@ import reactor.core.publisher.Mono;
 
 import javax.annotation.Resource;
 import java.security.PublicKey;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -114,7 +115,7 @@ public class AuthorizationFilter implements GlobalFilter,Ordered,InitializingBea
 
 
 
-/*    private boolean hasPremisson(Claims claims,String currentUrl) {
+   private boolean hasPremisson(Claims claims,String currentUrl) {
         boolean hasPremisson = false;
         //登陆用户的权限集合判断
         List<String> premessionList = claims.get("authorities",List.class);
@@ -126,11 +127,11 @@ public class AuthorizationFilter implements GlobalFilter,Ordered,InitializingBea
         }
         if(!hasPremisson){
             log.warn("权限不足");
-            throw new GateWayException(SystemErrorType.FORBIDDEN);
+//            throw new GateWayException(SystemErrorType.FORBIDDEN);
         }
 
         return hasPremisson;
-    }*/
+    }
 
 
 

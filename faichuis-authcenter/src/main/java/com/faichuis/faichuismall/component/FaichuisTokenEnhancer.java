@@ -20,6 +20,8 @@ public class FaichuisTokenEnhancer implements TokenEnhancer {
 
         additionalInfo.put("memberId",memberDetails.getUmsMember().getId());
 
+        additionalInfo.put("nickName",memberDetails.getUmsMember().getNickname());
+
         reMap.put("additionalInfo",additionalInfo);
 
         ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(reMap);

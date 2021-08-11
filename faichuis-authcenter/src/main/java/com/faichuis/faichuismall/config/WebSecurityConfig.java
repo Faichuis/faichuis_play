@@ -32,7 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/assets/**",
                 "/css/**",
                 "/images/**",
-                "/oauth/check_token");
+                "/oauth/check_token",
+                "/oauth/token_key");
     }
 
     public static void main(String[] args) {

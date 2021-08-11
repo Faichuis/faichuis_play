@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>faichuis-starter</artifactId>
+    <artifactId>faichuis-order-starter</artifactId>
 
 
     <dependencies>
@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>com.faichuis</groupId>
-            <artifactId>faichuis-service</artifactId>
+            <artifactId>faichuis-order-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

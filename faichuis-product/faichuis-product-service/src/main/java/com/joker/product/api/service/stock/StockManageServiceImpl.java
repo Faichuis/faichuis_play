@@ -29,8 +29,8 @@ import org.springframework.util.ObjectUtils;
 @Slf4j
 public class StockManageServiceImpl implements StockManageService {
 
-    @Autowired
-    private PmsSkuStockMapper skuStockMapper;
+    //@Autowired
+    //private PmsSkuStockMapper skuStockMapper;
 
     @Autowired
     private SmsFlashPromotionProductRelationMapper flashPromotionProductRelationMapper;
@@ -73,18 +73,19 @@ public class StockManageServiceImpl implements StockManageService {
 
     @Override
     public CommonResult lockStock(List<CartPromotionItemReq> cartPromotionItemList) {
-        try {
-
-            for (CartPromotionItemReq cartPromotionItem : cartPromotionItemList) {
-                PmsSkuStock skuStock = skuStockMapper.selectByPrimaryKey(cartPromotionItem.getProductSkuId());
-                skuStock.setLockStock(skuStock.getLockStock() + cartPromotionItem.getQuantity());
-                skuStockMapper.updateByPrimaryKeySelective(skuStock);
-            }
-            return CommonResult.success(true);
-        }catch (Exception e) {
-            log.error("锁定库存失败...");
-            return CommonResult.failed();
-        }
+        //try {
+        //
+        //    for (CartPromotionItemReq cartPromotionItem : cartPromotionItemList) {
+        //        PmsSkuStock skuStock = skuStockMapper.selectByPrimaryKey(cartPromotionItem.getProductSkuId());
+        //        skuStock.setLockStock(skuStock.getLockStock() + cartPromotionItem.getQuantity());
+        //        skuStockMapper.updateByPrimaryKeySelective(skuStock);
+        //    }
+        //    return CommonResult.success(true);
+        //}catch (Exception e) {
+        //    log.error("锁定库存失败...");
+        //    return CommonResult.failed();
+        //}
+        return null;
     }
 
     //验证秒杀时间

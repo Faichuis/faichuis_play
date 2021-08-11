@@ -2,8 +2,8 @@ package com.joker.product.dto.entity;
 
 import java.util.List;
 
-import com.faichuis.faichuismall.model.SmsFlashPromotion;
-import com.faichuis.faichuismall.model.SmsFlashPromotionProductRelation;
+import com.faichuis.faichuismall.entity.SmsFlashPromotion;
+import com.faichuis.faichuismall.entity.SmsFlashPromotionProductRelation;
 import lombok.Data;
 
 /**

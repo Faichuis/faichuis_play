@@ -7,7 +7,6 @@ import javax.annotation.PostConstruct;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.joker.product.api.common.resp.PmsProductServiceResp;
-import com.joker.product.dto.entity.PmsProductParamDO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

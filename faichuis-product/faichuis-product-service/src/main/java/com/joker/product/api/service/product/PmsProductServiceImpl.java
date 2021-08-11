@@ -3,24 +3,16 @@ package com.joker.product.api.service.product;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.TimeUnit;
 
-import com.faichuis.faichuismall.common.constant.RedisKeyPrefixConst;
-import com.faichuis.faichuismall.mapper.SmsFlashPromotionMapper;
-import com.faichuis.faichuismall.mapper.SmsFlashPromotionSessionMapper;
 import com.joker.product.api.common.resp.CartProductResp;
 import com.joker.product.api.common.resp.FlashPromotionProductResp;
 import com.joker.product.api.common.resp.FlashPromotionSessionExtResp;
 import com.joker.product.api.common.resp.PmsProductServiceResp;
 import com.joker.product.api.common.resp.PromotionProductResp;
-import com.joker.product.common.component.LocalCache;
-import com.joker.product.common.component.zklock.ZKLock;
-import com.joker.product.common.util.RedisOpsUtil;
 import com.joker.product.dto.entity.FlashPromotionParamDO;
 import com.joker.product.dto.entity.PmsProductParamDO;
 import com.joker.product.dto.mapper.FlashPromotionProductMapper;
 import com.joker.product.dto.mapper.PortalProductMapper;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -37,25 +29,25 @@ public class PmsProductServiceImpl implements PmsProductService {
     @Autowired
     private FlashPromotionProductMapper flashPromotionProductDao;
 
-    @Autowired
-    private SmsFlashPromotionMapper flashPromotionMapper;
+    //@Autowired
+    //private SmsFlashPromotionMapper flashPromotionMapper;
+    //
+    //@Autowired
+    //private SmsFlashPromotionSessionMapper promotionSessionMapper;
 
-    @Autowired
-    private SmsFlashPromotionSessionMapper promotionSessionMapper;
-
-    @Autowired
-    private RedisOpsUtil redisOpsUtil;
+    //@Autowired
+    //private RedisOpsUtil redisOpsUtil;
 
     private Map<String, PmsProductParamDO> cacheMap = new ConcurrentHashMap<>();
 
-    @Autowired
-    private LocalCache cache;
+    //@Autowired
+    //private LocalCache cache;
 
     /*
      * zk分布式锁
      */
-    @Autowired
-    private ZKLock zkLock;
+    //@Autowired
+    //private ZKLock zkLock;
     private String lockPath = "/load_db";
 
     /**
@@ -65,22 +57,22 @@ public class PmsProductServiceImpl implements PmsProductService {
      */
     @Override
     public PmsProductServiceResp getProductInfo(Long id){
-        PmsProductServiceResp productInfo;
-        productInfo = cache.get(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE + id);
+        PmsProductServiceResp productInfo = null;
+        //productInfo = cache.get(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE + id);
         //一级缓存
         if(productInfo != null){
             return productInfo;
         }
 
         //从二级缓存Redis里找
-        productInfo = redisOpsUtil.get(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE+id,PmsProductServiceResp.class);
+        //productInfo = redisOpsUtil.get(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE+id,PmsProductServiceResp.class);
 
         if(productInfo!=null){
-            cache.setLocalCache(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE+id,productInfo);
+            //cache.setLocalCache(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE+id,productInfo);
             return productInfo;
         }
 
-        if(zkLock.lock(lockPath + "_" + id)) {
+        //if(zkLock.lock(lockPath + "_" + id)) {
             //todo 查询商品详情信息
             PmsProductParamDO pmsProductParamDO = portalProductDao.getProductInfo(id);
             if (pmsProductParamDO == null) {
@@ -102,17 +94,17 @@ public class PmsProductServiceImpl implements PmsProductService {
             }
 
             //todo 缓存到一级缓存
-            BeanUtils.copyProperties(pmsProductParamDO,productInfo);
-            cache.setLocalCache(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE + id, productInfo);
-            //todo 商品信息缓存到reids当中，缓存被动更新
-            redisOpsUtil.set(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE + id, pmsProductParamDO, 3600, TimeUnit.SECONDS);
-            zkLock.unlock(lockPath + "_" + id);
-        }else{
-            productInfo = redisOpsUtil.get(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE+id,PmsProductServiceResp.class);
-            if(productInfo != null){
-                cache.setLocalCache(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE + id,productInfo);
-            }
-        }
+            //BeanUtils.copyProperties(pmsProductParamDO,productInfo);
+            //cache.setLocalCache(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE + id, productInfo);
+            ////todo 商品信息缓存到reids当中，缓存被动更新
+            //redisOpsUtil.set(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE + id, pmsProductParamDO, 3600, TimeUnit.SECONDS);
+            //zkLock.unlock(lockPath + "_" + id);
+        //}else{
+        //    productInfo = redisOpsUtil.get(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE+id,PmsProductServiceResp.class);
+        //    if(productInfo != null){
+        //        cache.setLocalCache(RedisKeyPrefixConst.PRODUCT_DETAIL_CACHE + id,productInfo);
+        //    }
+        //}
         return productInfo;
     }
 
